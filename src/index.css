@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: GeneralSans;
+  src: url("/fonts/general.otf") format("opentype");
+}
+
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --font-general: GeneralSans;
+}
+
+@theme inline {
+  --font-general: var(--font-general);
+}
+
+body {
+  font-family: var(--font-general);
+}
+
+.mask {
+  padding-left: 20px;
+  position: relative;
+  color: black;
+}
+
+.mask::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  z-index: -1;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mask:hover::before {
+  transform: scaleY(1);
+  transform-origin: top;
+  /* transition: transform .4s cubic-bezier(0.4, 0, 0.2, 1); */
+}
+
+.mask:hover {
+  /* transition-duration: ; */
+  transition-delay: 0.2s;
+  color: white;
+}
