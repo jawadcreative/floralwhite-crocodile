@@ -54,7 +54,7 @@ const BuildingMain = () => {
         })
 
         // forward: 1) grid scales up, 2) then the Flip + image opacity plays
-        master.to(grid, { scaleX: 1, top: 0, borderRadius: 0, duration: 0.5 })
+        master.to(grid, { width: '100%', top: 0, borderRadius: 0, duration: 0.5 })
         master.to(topHead, { filter: 'blur(10px)' })
         master.fromTo(inner,
             { progress: 0 },
@@ -82,16 +82,16 @@ const BuildingMain = () => {
     )
 
     return (
-        <section ref={parent} className="h-screen w-full relative">
+        <section ref={parent} className="h-screen w-full relative flex justify-center">
             <div
                 ref={child}
-                className="h-screen w-full scale-x-75 absolute top-[30%] grid grid-cols-1 grid-rows-4 overflow-hidden rounded-4xl"
+                className="h-screen w-[80%] absolute top-[30%] grid grid-cols-1 grid-rows-4 overflow-hidden rounded-4xl"
             >
                 {['strategy', 'space', 'brand', 'experience'].map((item, i) => (
                     <div
                         key={i}
                         style={{ backgroundPosition: `0 ${-i * 25}vh` }}
-                        className={`elem relative col-span-1 row-span-1 bg-neutral-900 bg-size-[100vw_100vh] bg-[url('/images/building.jpg')] bg-no-repeat flex ${(i + 1) % 2 === 0 ? 'items-start justify-end' : 'items-end justify-start'}`}
+                        className={`elem relative col-span-1 row-span-1 w-full bg-neutral-900 bg-size-[100vw_100vh] bg-[url('/images/building.jpg')] bg-no-repeat flex ${(i + 1) % 2 === 0 ? 'items-start justify-end' : 'items-end justify-start'}`}
                     >
                         <h1 className="topHead text-6xl text-white uppercase font-bold">{item}</h1>
                         <div className="floor absolute inset-0 h-full w-full opacity-0 flex items-center flex-col">
