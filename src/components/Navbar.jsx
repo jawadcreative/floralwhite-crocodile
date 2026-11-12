@@ -94,7 +94,7 @@ const Navbar = () => {
                                 'Services',
                                 'Projects',
                                 'Contact'].map((item, i) => (
-                                    <Link onClick={closeNav} to={i === 0 ? '/' : item.toLocaleLowerCase()} className="text-white text-6xl font-bold">{item}</Link>
+                                    <Link key={i} onClick={closeNav} to={i === 0 ? '/' : item.toLocaleLowerCase()} className="text-white text-6xl font-bold">{item}</Link>
                                 ))}
                         </div>
                     </div>

@@ -5,16 +5,23 @@
   src: url("/fonts/general.otf") format("opentype");
 }
 
+@font-face {
+  font-family: heading;
+  src: url("/fonts/geading.ttf") format("truetype");
+}
+
 .scroller::-webkit-scrollbar {
   display: none;
 }
 
 :root {
   --font-general: GeneralSans;
+  --font-heading: heading;
 }
 
 @theme inline {
   --font-general: var(--font-general);
+  --font-heading: var(--font-heading);
 }
 
 body {
@@ -51,4 +58,30 @@ body {
   /* transition-duration: ; */
   transition-delay: 0.2s;
   color: white;
+}
+
+.heading {
+  font-family: var(--font-heading);
+}
+
+canvas {
+  display: block;
+}
+
+@keyframes heroText {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.animate-hero-text {
+  animation: heroText 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
