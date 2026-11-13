@@ -52,30 +52,30 @@ const Contact = () => {
     })
     return (
         <main>
-            <section className="h-full w-full flex bg-black text-white">
-                <div className=" p-6 h-screen sticky top-0 w-1/2 flex flex-col gap-6">
+            <section className="h-full w-full flex flex-col lg:flex-row bg-black text-white">
+                <div className="p-6 pt-24 lg:pt-24 min-h-screen h-auto lg:h-screen lg:sticky top-0 w-full lg:w-1/2 flex flex-col gap-6">
                     <div className="flex items-center gap-2">
-                        <img src="/images/logo.png" className="h-4 w-4" />
-                        <p className="text-sm">Contect us</p>
+                        <img src="/images/logo.png" alt="" className="h-4 w-4" />
+                        <p className="text-sm">Contact us</p>
                     </div>
-                    <p ref={ani} className="text-6xl font-bold">Let’s talk about <br /> your project.</p>
+                    <h1 ref={ani} className="heading text-6xl font-bold">Let’s talk about <br /> your project.</h1>
                     <p className="">LXD is a multidisciplinary studio connecting strategy, brand, space <br /> and experience. Tell us where your project is going and we’ll reply <br /> within two working days.</p>
                     <div className="flex items-center gap-2">
-                        <img src="/images/logo.png" className="h-4 w-4" />
+                        <img src="/images/logo.png" alt="" className="h-4 w-4" />
                         <p className="text-sm">Write us</p>
                     </div>
                     <p className="flex items-center gap-3"><span><RiArrowRightLine size={18} /></span> Contact@letsexperiencedesign.com</p>
                     <div className="flex w-full justify-between">
                         <div className="flex flex-col gap-3">
                             <div className="flex items-center gap-2">
-                                <img src="/images/logo.png" className="h-4 w-4" />
+                                <img src="/images/logo.png" alt="" className="h-4 w-4" />
                                 <p className="text-sm">Call us</p>
                             </div>
                             <p className="flex items-center gap-3"><span><RiArrowRightLine size={18} /></span>+966 55 513 6617</p>
                         </div>
                         <div className="flex flex-col gap-3">
                             <div className="flex items-center gap-2">
-                                <img src="/images/logo.png" className="h-4 w-4" />
+                                <img src="/images/logo.png" alt="" className="h-4 w-4" />
                                 <p className="text-sm">Visit us</p>
                             </div>
                             <p className="">LXD Studio <br />
@@ -84,31 +84,31 @@ const Contact = () => {
                     </div>
                     <div className="flex flex-col gap-6">
                         <div className="flex items-center gap-2">
-                            <img src="/images/logo.png" className="h-4 w-4" />
+                            <img src="/images/logo.png" alt="" className="h-4 w-4" />
                             <p className="text-sm">Stay connected</p>
                         </div>
                         <div className="flex items-center gap-2">
-                            {[<RiInstagramLine size={16} />, <RiLinkedinLine size={16} />].map((item, i) => (
+                            {[<RiInstagramLine key="instagram" size={16} />, <RiLinkedinLine key="linkedin" size={16} />].map((item, i) => (
                                 <div key={i} className="px-4 py-2 bg-[#a19e9e52] backdrop-blur-md rounded-full">{item}</div>
                             ))}
                         </div>
                     </div>
                 </div>
-                <div className="w-1/2 p-6 text-black">
+                <div className="w-full lg:w-1/2 p-6 text-black">
                     <div className="h-full w-full p-6 bg-[#F4F1EA] rounded-lg flex flex-col gap-10">
 
                         <div className="flex items-start justify-between">
                             <div className="flex items-center gap-2">
-                                <img src="/images/logo.png" className="h-4 w-4" />
+                                <img src="/images/logo.png" alt="" className="h-4 w-4" />
                                 <p className="text-sm">Get in touch</p>
                             </div>
 
-                            <p className="leading-none text-2xl font-bold">
+                            <h2 className="heading leading-none text-2xl font-bold">
                                 One brief is all it takes <br />
                                 to start building <br />
                                 something layer by <br />
                                 layer.
-                            </p>
+                            </h2>
                         </div>
 
                         <div className="flex flex-col gap-2">

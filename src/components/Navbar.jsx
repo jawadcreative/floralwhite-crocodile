@@ -54,13 +54,13 @@ const Navbar = () => {
             <section ref={nav} className='w-full h-0 bg-[#ffffff91] backdrop-blur-md fixed top-0 left-0 z-40 overflow-hidden'>
                 <div className="flex justify-between items-start bg-black pt-20 p-6">
                     <div className="flex flex-col gap-6 w-fit py-4">
-                        <p className="text-4xl font-bold leading-none text-white">Take a look at some <br /> of our recent work.</p>
+                        <p className="heading text-4xl font-bold leading-none text-white">Take a look at some <br /> of our recent work.</p>
                         <p className="text-white">From strategy and brand to spaces people walk into.</p>
                         <Button txt={'See our projects'} />
                     </div>
                     <div className="flex flex-col gap-14 w-fit">
                         <div className="flex gap-2">
-                            <img src="/images/logo.png" className="h-4 w-4 invert-100" />
+                            <img src="/images/logo.png" alt="" className="h-4 w-4 invert-100" />
                             <p className="text-sm text-white">Sectors</p>
                         </div>
                         <div className="flex flex-col">
@@ -75,7 +75,7 @@ const Navbar = () => {
                     </div>
                     <div className="w-fit flex flex-col gap-14">
                         <div className="flex gap-2">
-                            <img src="/images/logo.png" className="h-4 w-4 invert-100" />
+                            <img src="/images/logo.png" alt="" className="h-4 w-4 invert-100" />
                             <p className="text-sm text-white">Contact</p>
                         </div>
                         <div className="">
@@ -85,7 +85,7 @@ const Navbar = () => {
                     </div>
                     <div className="w-fit flex flex-col gap-14">
                         <div className="flex gap-2">
-                            <img src="/images/logo.png" className="h-4 w-4 invert-100" />
+                            <img src="/images/logo.png" alt="" className="h-4 w-4 invert-100" />
                             <p className="text-sm text-white">Menu</p>
                         </div>
                         <div className="flex flex-col gap-2">
@@ -94,7 +94,7 @@ const Navbar = () => {
                                 'Services',
                                 'Projects',
                                 'Contact'].map((item, i) => (
-                                    <Link key={i} onClick={closeNav} to={i === 0 ? '/' : item.toLocaleLowerCase()} className="text-white text-6xl font-bold">{item}</Link>
+                                    <Link key={i} onClick={closeNav} to={i === 0 ? '/' : item.toLocaleLowerCase()} className="heading text-white text-6xl font-bold">{item}</Link>
                                 ))}
                         </div>
                     </div>

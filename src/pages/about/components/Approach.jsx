@@ -6,14 +6,15 @@ const Approach = () => {
         <section className="flex p-6">
             <div className="w-1/2 h-full sticky top-20">
                 <div className="flex items-center gap-2">
-                    <img src="/images/logo.png" className="h-4 w-4" />
+                    <img src="/images/logo.png" alt="" className="h-4 w-4" />
                     <p>Approach</p>
                 </div>
-                <p className="mt-4 text-5xl leading-none font-bold">Boutique <br /> by design.</p>
+                <h2 className="heading mt-4 text-5xl leading-none font-bold">Boutique <br /> by design.</h2>
             </div>
             <div className="w-1/2 flex flex-col gap-6">
                 {cards.map((item, i) => (
                     <div
+                        key={item.name}
                         className={`h-[60vh] sticky top-20 w-full p-6 flex flex-col justify-between shadow-md ${i === 0
                                 ? "bg-[#FFFDF8]"
                                 : i === 1
@@ -26,7 +27,7 @@ const Approach = () => {
                             <p>{item.tag}</p>
                         </div>
                         <div className="flex flex-col gap-3">
-                            <p className="text-5xl font-bold w-[85%]">{item.name}</p>
+                            <h3 className="heading text-5xl font-bold w-[85%]">{item.name}</h3>
                             <p className="text-sm">{item.first}</p>
                             <p>{item.des}</p>
                         </div>

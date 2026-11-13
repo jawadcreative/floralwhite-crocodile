@@ -54,9 +54,6 @@ const Core = () => {
             y: e.clientY - cr.clientHeight / 2
         })
     }
-    const handleEnter = (e) => {
-        setIndex(e._targetInst.index)
-    }
     const handleLeave = () => {
         let cr = cursor.current
         gsap.to(cr, {
@@ -66,16 +63,16 @@ const Core = () => {
     return (
         <section className="h-screen w-full flex flex-col justify-center">
             <div className="flex w-full justify-between items-center p-6">
-                <p className="text-5xl font-bold">Our core sectors</p>
+                <h2 className="heading text-5xl font-bold">Our core sectors</h2>
                 <Button txt={'Explore our services'} />
             </div>
             <div onMouseMove={handleMove} onMouseLeave={handleLeave} className="border-t border-gray-300 relative">
                 <div ref={cursor} className="h-96 w-72 bg-red-300 fixed top-0 left-0 z-10 pointer-events-none opacity-0">
-                    <img src={items[index].img} className="h-full w-full object-cover object-center" />
+                    <img src={items[index].img} alt={`${items[index].name} sector`} className="h-full w-full object-cover object-center" />
                 </div>
                 {items.map((item, i) => (
                     <div
-                        onMouseEnter={handleEnter}
+                        onMouseEnter={() => setIndex(i)}
                         key={item.name}
                         className="mask flex items-center py-6 border-b border-gray-300 cursor-pointer px-6"
                     >
@@ -84,9 +81,9 @@ const Core = () => {
                                 0{i + 1}
                             </span>
 
-                            <p className="text-5xl font-bold">
+                            <h3 className="heading text-5xl font-bold">
                                 {item.name}
-                            </p>
+                            </h3>
                         </div>
 
                         <div className="leading-none">

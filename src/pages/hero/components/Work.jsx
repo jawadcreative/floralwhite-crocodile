@@ -13,7 +13,7 @@ const Work = () => {
           <div className="flex items-center gap-1">
             <img
               src="/images/logo.png"
-              alt="logo"
+              alt=""
               className="h-4 w-4 invert-100 mix-blend-color-burn"
             />
             <p className="text-sm">What we work on</p>
@@ -26,9 +26,9 @@ const Work = () => {
                   key={i}
                   className="overflow-hidden"
                 >
-                  <p className="heading text-6xl leading-none">
+                  <h2 className="heading text-6xl leading-none">
                     {item}
-                  </p>
+                  </h2>
                 </div>
               )
             )}
@@ -42,10 +42,10 @@ const Work = () => {
       <div className="h-screen w-full grid grid-cols-6 grid-rows-2 gap-3">
         {data.map((item, i) => (
           <div key={i} style={{ gridColumn: `span ${item.col}` }} className="row-span-1 p-8 rounded-2xl bg-[#f3f0e9] flex flex-col justify-between items-start group cursor-pointer hover:bg-black">
-            <p className="text-7xl font-bold group-hover:text-[#FF753E] duration-300">0{i + 1}</p>
+            <span aria-hidden="true" className="heading text-7xl group-hover:text-[#FF753E] duration-300">0{i + 1}</span>
             <div className="">
-              <p className="text-2xl py-3 border-b border-gray-400 group-hover:text-[white] duration-300">{item.name}</p>
-              <p className="w-96 text-sm leading-none py-3 group-hover:text-[white] duration-300">{item.des}</p>
+              <h3 className="heading text-2xl py-3 border-b border-gray-400 group-hover:text-[white] duration-300">{item.name}</h3>
+              <p className="w-96 max-w-full text-sm leading-none py-3 group-hover:text-[white] duration-300">{item.des}</p>
             </div>
           </div>
         ))}

@@ -19,9 +19,9 @@ const Clients = () => {
                                     key={i}
                                     className="overflow-hidden"
                                 >
-                                    <p className="heading text-6xl leading-none">
+                                    <h2 className="heading text-6xl leading-none">
                                         {item}
-                                    </p>
+                                    </h2>
                                 </div>
                             )
                         )}
@@ -29,7 +29,7 @@ const Clients = () => {
                 </div>
 
                 <div className="leading-none">
-                    <p className="text-4xl font-bold">25</p>
+                    {/* <p className="text-4xl font-bold">25</p> */}
                     <p className="text-sm font-light leading-none">
                         organisations across government,<br /> hospitality, retail, food and workplace.
                     </p>
@@ -42,7 +42,7 @@ const Clients = () => {
                     <div key={i} className="col-span-1 row-span-1 bg-[#F4F1EA] flex items-center justify-center p-6 group">
                         <img
                             src={`/logos/client-${String(i + 1).padStart(2, '0')}.webp`}
-                            alt={`Client ${i + 1}`}
+                            alt={`Client ${i + 1} logo`}
                             className="w-full h-20 object-contain object-center group-hover:scale-105 transition-all duration-500 contrast-50 group-hover:contrast-100"
                         />
                     </div>

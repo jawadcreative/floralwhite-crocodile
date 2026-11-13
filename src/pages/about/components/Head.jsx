@@ -36,20 +36,20 @@ const Head = () => {
         <section>
             <div className="h-screen w-full flex flex-col justify-center gap-3 px-12 bg-[url('/images/about.svg')] bg-cover bg-center">
                 <div className="flex gap-2">
-                    <img src="/images/logo.png" alt="logo" className="h-4 w-4" />
+                    <img src="/images/logo.png" alt="" className="h-4 w-4" />
                     <p className="text-sm">About us</p>
                 </div>
-                <h1 ref={text} className="text-6xl overflow-hidden">We work across sectors where
+                <h1 ref={text} className="heading text-6xl overflow-hidden">We work across sectors where
                     business <br /> strategy, brand, space, and
                     experience need to come together.</h1>
             </div>
             <div ref={opacityParent} className="h-[50vh] w-full flex items-center justify-end px-6">
                 <div className="flex flex-col gap-6">
                     <div className="flex gap-2">
-                        <img src="/images/logo.png" alt="logo" className="h-4 w-4" />
+                        <img src="/images/logo.png" alt="" className="h-4 w-4" />
                         <p className="text-sm">What we believe in</p>
                     </div>
-                    <p ref={opacity} className="text-4xl text-gray-300">From a single idea to a wider brand <br /> ecosystem, we create connected <br /> brands and spaces designed to <br /> resonate with people, perform in the <br /> market, and grow with purpose.</p>
+                    <h2 ref={opacity} className="heading text-4xl text-gray-300">From a single idea to a wider brand <br /> ecosystem, we create connected <br /> brands and spaces designed to <br /> resonate with people, perform in the <br /> market, and grow with purpose.</h2>
                 </div>
             </div>
         </section>

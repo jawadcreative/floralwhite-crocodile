@@ -24,11 +24,11 @@ const Head = () => {
         <section ref={main} className="h-screen w-full p-6 flex flex-col justify-between">
             <div className="scroller mt-28 overflow-x-auto w-full pointer-events-none">
                 <div ref={scroller} className="flex items-center gap-12">
-                    <p className="text-9xl font-bold uppercase">Projects</p>
-                    <img src="/images/logo.png" className="h-28 w-28" />
-                    <p className="text-9xl font-bold uppercase">Projects</p>
-                    <img src="/images/logo.png" className="h-28 w-28" />
-                    <p className="text-9xl font-bold uppercase">Projects</p>
+                    <h1 className="heading text-9xl font-bold uppercase">Projects</h1>
+                    <img src="/images/logo.png" alt="" aria-hidden="true" className="h-28 w-28" />
+                    <span aria-hidden="true" className="heading text-9xl font-bold uppercase">Projects</span>
+                    <img src="/images/logo.png" alt="" aria-hidden="true" className="h-28 w-28" />
+                    <span aria-hidden="true" className="heading text-9xl font-bold uppercase">Projects</span>
                 </div>
             </div>
             <div className="flex w-full justify-between mt-20">

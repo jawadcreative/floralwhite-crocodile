@@ -1,6 +1,4 @@
 
-import React from "react";
-
 const Footers = () => {
     const navigation = [
         "Home",
@@ -23,7 +21,7 @@ const Footers = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-6">
 
                 <div>
-                    <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-medium leading-[1.15] tracking-tight max-w-2xl">
+                    <h2 className="heading text-4xl sm:text-5xl lg:text-[56px] leading-[1.15] tracking-tight max-w-2xl">
                         Designing systems,
                         <br />
                         building places.
@@ -40,6 +38,7 @@ const Footers = () => {
                         <form className="flex items-center border-b border-black/30 pb-1">
                             <input
                                 type="email"
+                                aria-label="Your email address"
                                 placeholder="Your email address"
                                 className="w-full bg-transparent outline-none text-sm placeholder:text-black/40"
                             />
@@ -74,15 +73,12 @@ const Footers = () => {
                         <p className="text-sm">Navigate</p>
                     </div>
 
-                    <nav className="flex flex-wrap gap-x-4 gap-y-1 max-w-[600px]">
+                    <nav className="flex flex-wrap gap-x-4 gap-y-1 max-w-150">
                         {navigation.map((item, i) => (
                             <a
                                 key={item}
                                 href={`#${item.toLowerCase()}`}
-                                className={`text-3xl sm:text-4xl font-medium tracking-tight transition-colors duration-300 ${i === 0
-                                    ? "text-[#F4F1EA]"
-                                    : "text-white/40 hover:text-white"
-                                    }`}
+                                className={`heading text-3xl sm:text-4xl font-medium tracking-tight transition-colors duration-300 ${i === 0 ? "text-[#F4F1EA]" : "text-white/40 hover:text-white"}`}
                             >
                                 {item}
                             </a>

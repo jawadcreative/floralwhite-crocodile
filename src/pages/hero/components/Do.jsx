@@ -97,7 +97,7 @@ const Do = () => {
                     <div className="flex items-center gap-1">
                         <img
                             src="/images/logo.png"
-                            alt="logo"
+                            alt=""
                             className="h-4 w-4 invert-100 mix-blend-color-burn"
                         />
                         <p className="text-sm">What we do</p>
@@ -110,9 +110,9 @@ const Do = () => {
                                     key={i}
                                     className="overflow-hidden"
                                 >
-                                    <p className="heading text-4xl leading-none">
+                                    <h2 className="heading text-4xl leading-none">
                                         {item}
-                                    </p>
+                                    </h2>
                                 </div>
                             )
                         )}
@@ -146,7 +146,7 @@ const Do = () => {
                                 (0{i + 1})
                             </span>
 
-                            <span className="text-3xl md:text-5xl font-bold">
+                            <span className="heading text-3xl md:text-5xl font-bold">
                                 {item}
                             </span>
                         </p>

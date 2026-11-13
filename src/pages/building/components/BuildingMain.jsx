@@ -93,10 +93,15 @@ const BuildingMain = () => {
                         style={{ backgroundPosition: `0 ${-i * 25}vh` }}
                         className={`elem relative col-span-1 row-span-1 bg-neutral-900 bg-size-[100vw_100vh] bg-[url('/images/building.jpg')] bg-no-repeat flex ${(i + 1) % 2 === 0 ? 'items-start justify-end' : 'items-end justify-start'}`}
                     >
-                        <h1 className="topHead text-6xl text-white uppercase font-bold">{item}</h1>
+                        {i === 0 ? (
+                            <h1 className="topHead heading text-6xl text-white uppercase font-bold">{item}</h1>
+                        ) : (
+                            <h2 className="topHead heading text-6xl text-white uppercase font-bold">{item}</h2>
+                        )}
                         <div className="floor absolute inset-0 h-full w-full opacity-0 flex items-center flex-col">
                             <img
                                 src={`/images/floor-${i + 1}.jpg`}
+                                alt={`${item} interior design`}
                                 className="h-full w-full object-cover"
                             />
                             <p className="absolute -bottom-10 uppercase">{item}</p>

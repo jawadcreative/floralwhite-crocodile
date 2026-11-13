@@ -110,15 +110,15 @@ const Vision = () => {
                         <img
                             className="h-4 w-4"
                             src="/images/logo.png"
-                            alt="Logo"
+                            alt=""
                         />
                         <p>Process</p>
                     </div>
 
-                    <p className="text-6xl font-bold leading-none">
+                    <h2 className="heading text-6xl font-bold leading-none">
                         One vision.<br />
                         Every layer.
-                    </p>
+                    </h2>
                 </div>
 
                 <p className="leading-none">

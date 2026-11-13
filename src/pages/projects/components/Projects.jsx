@@ -7,14 +7,14 @@ const Projects = () => {
   ]
   return (
     <section className="h-[150vh] w-full grid grid-cols-2 grid-rows-2 gap-6 p-6">
-      {projects.map((item, i) => (
-        <div className="col-span-1 row-span-1 flex flex-col gap-3 group">
+      {projects.map((item) => (
+        <div key={item.name} className="col-span-1 row-span-1 flex flex-col gap-3 group">
           <div className="h-[55vh] w-full overflow-hidden">
-            <img src={item.image} className="h-[55vh] w-full object-cover object-center scale-[1.1] duration-500 group-hover:scale-100" />
+            <img src={item.image} alt={`${item.name} project`} className="h-[55vh] w-full object-cover object-center scale-[1.1] duration-500 group-hover:scale-100" />
           </div>
           <div className="flex justify-between">
             <div className="">
-              <p>{item.name}</p>
+              <h2 className="heading">{item.name}</h2>
               <p>{item.des}</p>
               <p>{item.year}</p>
             </div>

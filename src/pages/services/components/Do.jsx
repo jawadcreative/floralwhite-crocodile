@@ -133,7 +133,7 @@ const Do = () => {
                     <div className="flex items-center gap-1">
                         <img
                             src="/images/logo.png"
-                            alt="logo"
+                            alt=""
                             className="h-4 w-4 invert-100 mix-blend-color-burn"
                         />
                         <p className="text-sm">What we do</p>
@@ -146,9 +146,9 @@ const Do = () => {
                                     key={i}
                                     className="overflow-hidden"
                                 >
-                                    <p className="heading text-4xl leading-none">
+                                    <h2 className="heading text-4xl leading-none">
                                         {item}
-                                    </p>
+                                    </h2>
                                 </div>
                             )
                         )}
@@ -177,18 +177,18 @@ const Do = () => {
                         {/* <div className="service-bg absolute top-0 left-0 -z-10 h-0 w-full bg-black px-4" /> */}
 
                         {/* Service text */}
-                        <p className="w-1/2 service-text relative z-10 flex items-center gap-12 text-black">
+                        <div className="w-1/2 service-text relative z-10 flex items-center gap-12 text-black">
                             <span className="text-sm group-hover:text-[#ff753e]">
                                 (0{i + 1})
                             </span>
 
-                            <span className="text-3xl md:text-5xl font-bold">
+                            <h3 className="heading text-3xl md:text-5xl font-bold">
                                 {item.name}
-                            </span>
-                        </p>
+                            </h3>
+                        </div>
                         <div className="w-1/3 flex gap-1 flex-wrap">
-                            {item.tags.map((item, i) => (
-                                <p>{item}.</p>
+                            {item.tags.map((tag) => (
+                                <p key={tag}>{tag}.</p>
                             ))}
                         </div>
                     </div>

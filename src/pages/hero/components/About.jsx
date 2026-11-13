@@ -34,7 +34,7 @@ const About = () => {
                 <div className="w-3xl flex flex-col items-start">
                     <div className="flex items-center gap-3">
                         <img src="/images/logo.png" alt="logo" className="h-4 w-4 invert-100" />
-                        <h1 className="text-sm">Who we are</h1>
+                        <p className="text-sm">Who we are</p>
                     </div>
                     {['LXD is a multidisciplinary boutique studio connecting strategy, brand, space, and experience.', 'We work with founders, businesses, emerging ventures, and organisations building for the long term.', 'For us, design is a system, built layer by layer to perform in the market and grow with the business.'].map((item, i) => (
                         <p key={i} className="para text-3xl py-3">{item}</p>

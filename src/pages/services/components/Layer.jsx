@@ -38,10 +38,10 @@ const Layer = () => {
       <div className="flex h-[30vh] w-full items-center justify-between">
         <div>
           <div className="flex gap-2">
-            <img src="/images/logo.png" className="h-4 w-4" />
+            <img src="/images/logo.png" alt="" className="h-4 w-4" />
             <p>How we work</p>
           </div>
-          <p className="text-6xl font-bold">One vision. Every layer.</p>
+          <h2 className="heading text-6xl font-bold">One vision. Every layer.</h2>
         </div>
 
         <p className="leading-none">
@@ -62,7 +62,7 @@ const Layer = () => {
                 key={step.id}
                 className="flex flex-col items-center justify-end px-4 text-center"
               >
-                <h3 className="text-xl font-semibold">{step.title}</h3>
+                <h3 className="heading text-xl font-semibold">{step.title}</h3>
                 <p className="mt-2 mb-6 text-sm text-neutral-400">{step.desc}</p>
                 <div className="flex size-12 items-center justify-center rounded-full bg-[#ff6f3c] text-neutral-900">
                   {step.id}
@@ -90,7 +90,7 @@ const Layer = () => {
                 <div className="flex size-12 items-center justify-center rounded-full bg-[#ff6f3c] text-neutral-900">
                   {step.id}
                 </div>
-                <h3 className="mt-6 text-xl font-semibold">{step.title}</h3>
+                <h3 className="heading mt-6 text-xl font-semibold">{step.title}</h3>
                 <p className="mt-2 text-sm text-neutral-400">{step.desc}</p>
               </div>
             ) : (

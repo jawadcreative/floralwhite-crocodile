@@ -65,9 +65,9 @@ const Project = () => {
                         {["Work built", "layer by layer"].map(
                             (item, i) => (
                                 <div key={i} className="overflow-hidden">
-                                    <p className="heading text-6xl font-bold leading-none">
+                                    <h2 className="heading text-6xl leading-none">
                                         {item}
-                                    </p>
+                                    </h2>
                                 </div>
                             )
                         )}
@@ -85,10 +85,10 @@ const Project = () => {
                 <div ref={sliderRef} className="drag flex gap-5">
                     {projects.map((item, i) => (
                         <div key={i} className="flex flex-col gap-4 group cursor-pointer">
-                            <img src={item.image} className="h-[50vh] col-span-1 min-w-[33vw] object-cover object-center rounded-t-2xl" alt="" />
+                            <img src={item.image} className="h-[50vh] col-span-1 min-w-[33vw] object-cover object-center rounded-t-2xl" alt={`${item.name} project`} />
                             <div className="">
                                 <div className="w-full flex justify-between items-start">
-                                    <p className="text-xl font-bold group-hover:text-[#FF753E]">{item.name}</p>
+                                    <h3 className="text-xl heading group-hover:text-[#FF753E]">{item.name}</h3>
                                     <p className="text-sm">{item.tag}</p>
                                 </div>
                                 <p className="text-xs">{item.des}</p>
