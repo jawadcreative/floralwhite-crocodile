@@ -3,6 +3,7 @@ import Button from "../pages/hero/components/Button"
 import { useRef, useState } from "react";
 import gsap from "gsap";
 import { Link } from "react-router";
+import TextAnimation from "./TextAnimation";
 
 const Navbar = () => {
     const nav = useRef(null)
@@ -69,7 +70,7 @@ const Navbar = () => {
                                 'Retail',
                                 'Corporate & Workplace',
                                 'Arts & Culture'].map((item, i) => (
-                                    <Link to={''} key={i} className="text-white hover:text-amber-600 cursor-pointer w-fit">{item}</Link>
+                                    <TextAnimation style="text-white hover:text-amber-600 cursor-pointer w-fit" content={item} />
                                 ))}
                         </div>
                     </div>
@@ -83,18 +84,18 @@ const Navbar = () => {
                             <p className="flex gap-2 items-center text-white"><span><RiArrowRightLine size={16} /></span> +966 55 513 6617</p>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-8 min-w-0">
+                    <div className="flex flex-col gap-8 min-w-0 group">
                         <div className="flex gap-2">
                             <img src="/images/logo.png" alt="" className="h-4 w-4 invert-100" />
                             <p className="text-sm text-white">Menu</p>
                         </div>
-                        <div className="flex flex-col gap-2">
+                        <div className="flex flex-col gap-2 group-hover:text-gray-400">
                             {['Home',
                                 'About',
                                 'Services',
                                 'Projects',
                                 'Contact'].map((item, i) => (
-                                    <Link key={i} onClick={closeNav} to={i === 0 ? '/' : item.toLocaleLowerCase()} className="heading text-white text-4xl sm:text-5xl lg:text-6xl font-bold">{item}</Link>
+                                    <Link key={i} onClick={closeNav} to={i === 0 ? '/' : item.toLocaleLowerCase()} className="heading group-hover:text-gray-400 text-white w-fit hover:text-white text-4xl sm:text-5xl lg:text-6xl font-bold">{item}</Link>
                                 ))}
                         </div>
                     </div>
