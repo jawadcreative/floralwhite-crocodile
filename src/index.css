@@ -63,3 +63,14 @@ body {
 .heading {
   font-family: var(--font-heading);
 }
+
+@media (max-width: 767px) {
+  .work-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+  }
+
+  .work-grid > div {
+    grid-column: 1 / -1 !important;
+  }
+}

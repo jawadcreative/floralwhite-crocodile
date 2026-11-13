@@ -92,7 +92,7 @@ const Do = () => {
             className="do min-h-screen w-full p-6"
         >
             {/* Header */}
-            <div className="flex w-full justify-between items-start">
+            <div className="flex flex-col md:flex-row w-full justify-between items-start gap-6">
                 <div>
                     <div className="flex items-center gap-1">
                         <img
@@ -110,7 +110,7 @@ const Do = () => {
                                     key={i}
                                     className="overflow-hidden"
                                 >
-                                    <h2 className="heading text-4xl leading-none">
+                                    <h2 className="heading text-3xl sm:text-4xl leading-none">
                                         {item}
                                     </h2>
                                 </div>
@@ -119,10 +119,10 @@ const Do = () => {
                     </div>
                 </div>
 
-                <div className="leading-none">
+                <div className="leading-none max-w-xl">
                     <p>
                         From the first strategy session to the space
-                        people walk <br />
+                        people walk <br className="hidden sm:block" />
                         into, these are the services we bring together.
                     </p>
 
@@ -135,18 +135,18 @@ const Do = () => {
                 {services.map((item, i) => (
                     <div
                         key={i}
-                        className="service-item relative isolate overflow-hidden border-b border-gray-300 py-6 cursor-pointer px-6 group"
+                        className="service-item relative isolate overflow-hidden border-b border-gray-300 py-6 cursor-pointer px-4 sm:px-6 group"
                     >
                         {/* Animated background */}
                         <div className="service-bg absolute top-0 left-0 -z-10 h-0 w-full bg-black px-4" />
 
                         {/* Service text */}
-                        <p className="service-text relative z-10 flex items-center gap-12 text-black">
+                        <p className="service-text relative z-10 flex items-center gap-4 sm:gap-12 text-black">
                             <span className="text-sm group-hover:text-[#ff753e]">
                                 (0{i + 1})
                             </span>
 
-                            <span className="heading text-3xl md:text-5xl font-bold">
+                            <span className="heading text-2xl sm:text-3xl lg:text-5xl font-bold">
                                 {item}
                             </span>
                         </p>

@@ -50,7 +50,7 @@ const Project = () => {
         <section className="project min-h-screen w-full p-6">
 
             {/* Header */}
-            <div className="flex w-full justify-between items-end">
+            <div className="flex flex-col sm:flex-row w-full justify-between items-start sm:items-end gap-4">
                 <div>
                     <div className="flex items-center gap-1">
                         <img
@@ -65,7 +65,7 @@ const Project = () => {
                         {["Work built", "layer by layer"].map(
                             (item, i) => (
                                 <div key={i} className="overflow-hidden">
-                                    <h2 className="heading text-6xl leading-none">
+                                    <h2 className="heading text-4xl sm:text-5xl lg:text-6xl leading-none">
                                         {item}
                                     </h2>
                                 </div>
@@ -81,11 +81,11 @@ const Project = () => {
                     </p>
                 </div>
             </div>
-            <div ref={containerRef} className="container w-full mt-6 overflow-hidden">
-                <div ref={sliderRef} className="drag flex gap-5">
+            <div ref={containerRef} className="container w-full max-w-full mt-6 overflow-hidden">
+                <div ref={sliderRef} className="drag flex w-max gap-5">
                     {projects.map((item, i) => (
-                        <div key={i} className="flex flex-col gap-4 group cursor-pointer">
-                            <img src={item.image} className="h-[50vh] col-span-1 min-w-[33vw] object-cover object-center rounded-t-2xl" alt={`${item.name} project`} />
+                        <div key={i} className="w-[82vw] sm:w-[44vw] lg:w-[33vw] min-w-0 flex flex-col gap-4 group cursor-pointer">
+                            <img src={item.image} className="h-[40vh] sm:h-[50vh] w-full object-cover object-center rounded-t-2xl" alt={`${item.name} project`} />
                             <div className="">
                                 <div className="w-full flex justify-between items-start">
                                     <h3 className="text-xl heading group-hover:text-[#FF753E]">{item.name}</h3>
@@ -99,8 +99,8 @@ const Project = () => {
                 </div>
 
             </div>
-            <div className="parent mt-6 flex justify-between items-start">
-                <p className="para leading-none text-3xl text-gray-300">Every project starts with the <br /> business behind it, then becomes a <br /> brand, a space and an experience <br /> people can walk into.</p>
+            <div className="parent mt-6 flex flex-col sm:flex-row justify-between items-start gap-4">
+                <p className="para leading-none text-xl sm:text-2xl lg:text-3xl text-gray-300">Every project starts with the <br className="hidden sm:block" /> business behind it, then becomes a <br className="hidden sm:block" /> brand, a space and an experience <br className="hidden sm:block" /> people can walk into.</p>
                 <Button txt='View all projects' />
             </div>
         </section>

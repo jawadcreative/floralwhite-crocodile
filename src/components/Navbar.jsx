@@ -51,14 +51,14 @@ const Navbar = () => {
                     <Button txt={'Start a project'} />
                 </div>
             </div>
-            <section ref={nav} className='w-full h-0 bg-[#ffffff91] backdrop-blur-md fixed top-0 left-0 z-40 overflow-hidden'>
-                <div className="flex justify-between items-start bg-black pt-20 p-6">
-                    <div className="flex flex-col gap-6 w-fit py-4">
+            <section ref={nav} className='w-full h-0 bg-[#ffffff91] backdrop-blur-md fixed top-0 left-0 z-40 overflow-x-hidden overflow-y-auto'>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-start bg-black pt-20 p-6">
+                    <div className="flex flex-col gap-6 min-w-0 py-4">
                         <p className="heading text-4xl font-bold leading-none text-white">Take a look at some <br /> of our recent work.</p>
                         <p className="text-white">From strategy and brand to spaces people walk into.</p>
                         <Button txt={'See our projects'} />
                     </div>
-                    <div className="flex flex-col gap-14 w-fit">
+                    <div className="flex flex-col gap-8 min-w-0">
                         <div className="flex gap-2">
                             <img src="/images/logo.png" alt="" className="h-4 w-4 invert-100" />
                             <p className="text-sm text-white">Sectors</p>
@@ -73,17 +73,17 @@ const Navbar = () => {
                                 ))}
                         </div>
                     </div>
-                    <div className="w-fit flex flex-col gap-14">
+                    <div className="flex flex-col gap-8 min-w-0">
                         <div className="flex gap-2">
                             <img src="/images/logo.png" alt="" className="h-4 w-4 invert-100" />
                             <p className="text-sm text-white">Contact</p>
                         </div>
                         <div className="">
-                            <p className="flex gap-2 items-center w-fit text-white"><span><RiArrowRightLine size={16} /></span> Contact@letsexperiencedesign.com</p>
-                            <p className="flex gap-2 items-center w-fit text-white"><span><RiArrowRightLine size={16} /></span> +966 55 513 6617</p>
+                            <p className="flex gap-2 items-center text-white break-all"><span><RiArrowRightLine size={16} /></span> Contact@letsexperiencedesign.com</p>
+                            <p className="flex gap-2 items-center text-white"><span><RiArrowRightLine size={16} /></span> +966 55 513 6617</p>
                         </div>
                     </div>
-                    <div className="w-fit flex flex-col gap-14">
+                    <div className="flex flex-col gap-8 min-w-0">
                         <div className="flex gap-2">
                             <img src="/images/logo.png" alt="" className="h-4 w-4 invert-100" />
                             <p className="text-sm text-white">Menu</p>
@@ -94,7 +94,7 @@ const Navbar = () => {
                                 'Services',
                                 'Projects',
                                 'Contact'].map((item, i) => (
-                                    <Link key={i} onClick={closeNav} to={i === 0 ? '/' : item.toLocaleLowerCase()} className="heading text-white text-6xl font-bold">{item}</Link>
+                                    <Link key={i} onClick={closeNav} to={i === 0 ? '/' : item.toLocaleLowerCase()} className="heading text-white text-4xl sm:text-5xl lg:text-6xl font-bold">{item}</Link>
                                 ))}
                         </div>
                     </div>

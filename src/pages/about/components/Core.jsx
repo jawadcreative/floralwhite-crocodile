@@ -61,27 +61,27 @@ const Core = () => {
         })
     }
     return (
-        <section className="h-screen w-full flex flex-col justify-center">
-            <div className="flex w-full justify-between items-center p-6">
-                <h2 className="heading text-5xl font-bold">Our core sectors</h2>
+        <section className="min-h-screen w-full flex flex-col justify-center py-12">
+            <div className="flex flex-col sm:flex-row w-full justify-between items-start sm:items-center gap-4 p-6">
+                <h2 className="heading text-4xl sm:text-5xl font-bold">Our core sectors</h2>
                 <Button txt={'Explore our services'} />
             </div>
             <div onMouseMove={handleMove} onMouseLeave={handleLeave} className="border-t border-gray-300 relative">
-                <div ref={cursor} className="h-96 w-72 bg-red-300 fixed top-0 left-0 z-10 pointer-events-none opacity-0">
+                <div ref={cursor} className="hidden lg:block h-96 w-72 bg-red-300 fixed top-0 left-0 z-10 pointer-events-none opacity-0">
                     <img src={items[index].img} alt={`${items[index].name} sector`} className="h-full w-full object-cover object-center" />
                 </div>
                 {items.map((item, i) => (
                     <div
                         onMouseEnter={() => setIndex(i)}
                         key={item.name}
-                        className="mask flex items-center py-6 border-b border-gray-300 cursor-pointer px-6"
+                        className="mask flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-0 py-6 border-b border-gray-300 cursor-pointer px-6"
                     >
-                        <div className="flex items-center gap-6 w-1/2">
+                        <div className="flex items-center gap-4 sm:gap-6 w-full sm:w-1/2">
                             <span className="text-xl">
                                 0{i + 1}
                             </span>
 
-                            <h3 className="heading text-5xl font-bold">
+                            <h3 className="heading text-3xl sm:text-4xl lg:text-5xl font-bold">
                                 {item.name}
                             </h3>
                         </div>

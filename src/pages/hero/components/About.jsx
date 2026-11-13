@@ -31,13 +31,13 @@ const About = () => {
                 <img src="/images/about.svg" alt="building" className="h-full w-full object-cover object-center" />
             </div>
             <div className="absolute top-0 left-0 h-screen w-full flex flex-col items-center justify-center">
-                <div className="w-3xl flex flex-col items-start">
+                <div className="w-full max-w-3xl px-6 flex flex-col items-start">
                     <div className="flex items-center gap-3">
                         <img src="/images/logo.png" alt="logo" className="h-4 w-4 invert-100" />
                         <p className="text-sm">Who we are</p>
                     </div>
                     {['LXD is a multidisciplinary boutique studio connecting strategy, brand, space, and experience.', 'We work with founders, businesses, emerging ventures, and organisations building for the long term.', 'For us, design is a system, built layer by layer to perform in the market and grow with the business.'].map((item, i) => (
-                        <p key={i} className="para text-3xl py-3">{item}</p>
+                        <p key={i} className="para text-xl sm:text-2xl lg:text-3xl py-3">{item}</p>
                     ))}
 
                     <Button txt= 'About' />
