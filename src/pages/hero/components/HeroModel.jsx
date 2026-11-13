@@ -1,8 +1,11 @@
+
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { SplitText } from "gsap/SplitText"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useRef, useState } from "react"
+import { Canvas } from "@react-three/fiber"
+import { OrbitControls } from "@react-three/drei"
 
 gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger)
 
@@ -19,6 +22,11 @@ const HeroModel = () => {
 
     // Scroll controls the stage
     useGSAP(() => {
+        const titles = gsap.utils.toArray(
+            ".heading",
+            con.current
+        )
+
         const totalStages = items.length
 
         const trigger = ScrollTrigger.create({
@@ -46,7 +54,12 @@ const HeroModel = () => {
 
     // Animate the active title
     useGSAP(() => {
-        const activeTitle = gsap.utils.toArray(".heading", con.current)[0]
+        const titles = gsap.utils.toArray(
+            ".heading",
+            con.current
+        )
+
+        const activeTitle = titles[stage]
 
         if (!activeTitle) return
 
@@ -83,7 +96,17 @@ const HeroModel = () => {
             ref={con}
             className="relative h-screen w-full overflow-hidden"
         >
-            <div className="absolute bottom-40 left-20 px-4">
+            <div className="h-screen w-full">
+                <Canvas>
+                    <ambientLight intensity={3}/>
+                    <mesh>
+                        <boxGeometry />
+                        <meshStandardMaterial wireframe={true} color={'red'} />
+                    </mesh>
+                    <OrbitControls />
+                </Canvas>
+            </div>
+            <div className="w-135 absolute bottom-40 left-20 px-4">
 
                 <div className="flex flex-col gap-3">
 
@@ -96,12 +119,22 @@ const HeroModel = () => {
                     </div>
 
                     <div
-                        className="relative h-28 w-fit bg-green-400"
+                        className="relative h-24 w-full overflow-hidden"
                         style={{ perspective: "500px" }}
                     >
-                        <h1 className="heading absolute left-0 top-0 whitespace-nowrap text-5xl sm:text-7xl lg:text-8xl font-bold">
-                            {items[stage]}
-                        </h1>
+                        {items.map((item, i) => (
+                            <h1
+                                key={item}
+                                className="heading absolute left-0 top-0 whitespace-nowrap text-8xl font-bold"
+                                style={{
+                                    visibility: i === stage
+                                        ? "visible"
+                                        : "hidden"
+                                }}
+                            >
+                                {item}
+                            </h1>
+                        ))}
                     </div>
 
                     <div className="h-2 w-24 bg-amber-600" />
