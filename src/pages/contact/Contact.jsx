@@ -58,14 +58,14 @@ const Contact = () => {
                         <img src="/images/logo.png" alt="" className="h-4 w-4" />
                         <p className="text-sm">Contact us</p>
                     </div>
-                    <h1 ref={ani} className="heading text-6xl font-bold">Let’s talk about <br /> your project.</h1>
-                    <p className="">LXD is a multidisciplinary studio connecting strategy, brand, space <br /> and experience. Tell us where your project is going and we’ll reply <br /> within two working days.</p>
+                    <h1 ref={ani} className="heading text-4xl sm:text-5xl lg:text-6xl font-bold">Let’s talk about <br /> your project.</h1>
+                    <p>LXD is a multidisciplinary studio connecting strategy, brand, space <br className="hidden lg:block" /> and experience. Tell us where your project is going and we’ll reply <br className="hidden lg:block" /> within two working days.</p>
                     <div className="flex items-center gap-2">
                         <img src="/images/logo.png" alt="" className="h-4 w-4" />
                         <p className="text-sm">Write us</p>
                     </div>
-                    <p className="flex items-center gap-3"><span><RiArrowRightLine size={18} /></span> Contact@letsexperiencedesign.com</p>
-                    <div className="flex w-full justify-between">
+                    <p className="flex items-start gap-3 min-w-0 break-all"><span><RiArrowRightLine size={18} /></span> Contact@letsexperiencedesign.com</p>
+                    <div className="flex flex-col sm:flex-row gap-6 w-full justify-between">
                         <div className="flex flex-col gap-3">
                             <div className="flex items-center gap-2">
                                 <img src="/images/logo.png" alt="" className="h-4 w-4" />
@@ -103,10 +103,10 @@ const Contact = () => {
                                 <p className="text-sm">Get in touch</p>
                             </div>
 
-                            <h2 className="heading leading-none text-2xl font-bold">
-                                One brief is all it takes <br />
-                                to start building <br />
-                                something layer by <br />
+                            <h2 className="heading leading-none text-lg sm:text-xl lg:text-2xl font-bold">
+                                One brief is all it takes <br className="hidden sm:block" />
+                                to start building <br className="hidden sm:block" />
+                                something layer by <br className="hidden sm:block" />
                                 layer.
                             </h2>
                         </div>
@@ -173,7 +173,7 @@ const Contact = () => {
                                 <span className="text-sm">Email</span>
                                 <input type="email" name="email" id="email" placeholder="Your Email" className="p-2 bg-white border border-white outline-none focus:border-black" />
                             </label>
-                            <div className="flex gap-4 w-full">
+                            <div className="flex flex-col sm:flex-row gap-4 w-full">
                                 <label className="flex flex-col gap-2 w-full">
                                     <span className="text-sm">Phone <span className="text-xs text-gray-400">(optional)</span></span>
                                     <input type="tel" name="phone" id="phone" placeholder="+966" className="p-2 bg-white border border-white outline-none focus:border-black" />

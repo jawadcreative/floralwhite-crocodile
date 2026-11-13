@@ -99,7 +99,7 @@ const HeroModel = () => {
                         className="relative h-28 w-fit bg-green-400"
                         style={{ perspective: "500px" }}
                     >
-                        <h1 className="heading absolute left-0 top-0 whitespace-nowrap text-8xl font-bold">
+                        <h1 className="heading absolute left-0 top-0 whitespace-nowrap text-5xl sm:text-7xl lg:text-8xl font-bold">
                             {items[stage]}
                         </h1>
                     </div>

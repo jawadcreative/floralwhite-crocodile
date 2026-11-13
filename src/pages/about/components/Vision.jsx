@@ -104,7 +104,7 @@ const Vision = () => {
     return (
         <section>
             {/* Heading */}
-            <div className="p-6 flex justify-between items-center w-full">
+            <div className="p-6 flex flex-col md:flex-row md:justify-between md:items-center gap-6 w-full">
                 <div>
                     <div className="flex items-center gap-2">
                         <img
@@ -115,19 +115,19 @@ const Vision = () => {
                         <p>Process</p>
                     </div>
 
-                    <h2 className="heading text-6xl font-bold leading-none">
+                    <h2 className="heading text-4xl sm:text-5xl lg:text-6xl font-bold leading-none">
                         One vision.<br />
                         Every layer.
                     </h2>
                 </div>
 
-                <p className="leading-none">
+                <p className="leading-none max-w-xl">
                     Our process doesn't follow a straight line. Strategy shapes design.
-                    <br />
+                    <br className="hidden sm:block" />
                     Space reshapes strategy. Every iteration sharpens the whole. We
-                    <br />
+                    <br className="hidden sm:block" />
                     keep moving between layers until each one makes the others
-                    <br />
+                    <br className="hidden sm:block" />
                     stronger.
                 </p>
             </div>
@@ -147,7 +147,7 @@ const Vision = () => {
                         >
                             {i + 1}
                             <span
-                                className={`absolute whitespace-nowrap text-center text-black font-semibold ${labelPositions[i]}`}
+                                className={`absolute max-w-28 whitespace-normal text-center text-xs lg:max-w-none lg:whitespace-nowrap lg:text-base text-black font-semibold ${labelPositions[i]} ${i === 1 ? "max-lg:left-auto max-lg:right-full max-lg:ml-0 max-lg:mr-2" : ""}`}
                             >
                                 {item.name}
                             </span>

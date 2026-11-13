@@ -35,16 +35,16 @@ const Layer = () => {
   return (
     <section className="min-h-screen w-full bg-[#0e0e0e] p-6 text-white">
       {/* Header */}
-      <div className="flex h-[30vh] w-full items-center justify-between">
+      <div className="flex flex-col lg:flex-row min-h-[30vh] w-full items-start lg:items-center justify-between gap-6">
         <div>
           <div className="flex gap-2">
             <img src="/images/logo.png" alt="" className="h-4 w-4" />
             <p>How we work</p>
           </div>
-          <h2 className="heading text-6xl font-bold">One vision. Every layer.</h2>
+          <h2 className="heading text-4xl sm:text-5xl lg:text-6xl font-bold">One vision. Every layer.</h2>
         </div>
 
-        <p className="leading-none">
+        <p className="leading-none max-w-xl">
           Our process doesn't follow a straight line. Strategy shapes design.{" "}
           <br /> Space reshapes strategy. Every iteration sharpens the whole. We{" "}
           <br /> keep moving between layers until each one makes the others{" "}
@@ -52,8 +52,22 @@ const Layer = () => {
         </p>
       </div>
 
-      {/* Timeline */}
-      <div className="mt-16 px-10">
+      <ol className="mt-8 flex flex-col divide-y divide-neutral-700 lg:hidden">
+        {steps.map((step) => (
+          <li key={step.id} className="flex items-start gap-4 py-5">
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#ff6f3c] text-neutral-900">
+              {step.id}
+            </span>
+            <div>
+              <h3 className="heading text-xl font-semibold">{step.title}</h3>
+              <p className="mt-2 text-sm text-neutral-400">{step.desc}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+
+      {/* Desktop timeline */}
+      <div className="hidden lg:block mt-16 px-10">
         {/* 1) TOP ROW: only steps with position "top" show up */}
         <div className="grid h-[250px] grid-cols-5">
           {steps.map((step) =>

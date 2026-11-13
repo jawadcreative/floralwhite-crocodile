@@ -34,22 +34,22 @@ const Head = () => {
     })
     return (
         <section>
-            <div className="h-screen w-full flex flex-col justify-center gap-3 px-12 bg-[url('/images/about.svg')] bg-cover bg-center">
+            <div className="min-h-screen w-full flex flex-col justify-center gap-3 px-6 sm:px-8 lg:px-12 py-24 bg-[url('/images/about.svg')] bg-cover bg-center">
                 <div className="flex gap-2">
                     <img src="/images/logo.png" alt="" className="h-4 w-4" />
                     <p className="text-sm">About us</p>
                 </div>
-                <h1 ref={text} className="heading text-6xl overflow-hidden">We work across sectors where
+                <h1 ref={text} className="heading text-3xl sm:text-4xl lg:text-6xl overflow-hidden">We work across sectors where
                     business <br /> strategy, brand, space, and
                     experience need to come together.</h1>
             </div>
-            <div ref={opacityParent} className="h-[50vh] w-full flex items-center justify-end px-6">
+            <div ref={opacityParent} className="min-h-[50vh] w-full flex items-center justify-end px-6 py-12">
                 <div className="flex flex-col gap-6">
                     <div className="flex gap-2">
                         <img src="/images/logo.png" alt="" className="h-4 w-4" />
                         <p className="text-sm">What we believe in</p>
                     </div>
-                    <h2 ref={opacity} className="heading text-4xl text-gray-300">From a single idea to a wider brand <br /> ecosystem, we create connected <br /> brands and spaces designed to <br /> resonate with people, perform in the <br /> market, and grow with purpose.</h2>
+                    <h2 ref={opacity} className="heading text-xl sm:text-2xl lg:text-4xl text-gray-300">From a single idea to a wider brand <br className="hidden sm:block" /> ecosystem, we create connected <br className="hidden sm:block" /> brands and spaces designed to <br className="hidden sm:block" /> resonate with people, perform in the <br className="hidden sm:block" /> market, and grow with purpose.</h2>
                 </div>
             </div>
         </section>
