@@ -20,7 +20,7 @@ const AFTER = [
     "md:px-6"
 ]
 
-const BuildingMain = () => {
+const App = () => {
     const parent = useRef(null)
     const child = useRef(null)
 
@@ -84,6 +84,11 @@ const BuildingMain = () => {
         master.to(topHead, {
             filter: 'blur(0px)'
         })
+        master.to(items, {
+            justifyContent: 'center',
+            alignItems: 'center',
+            duration: 2,
+        })
 
         return () => {
             grid.classList.remove(...AFTER)
@@ -94,16 +99,15 @@ const BuildingMain = () => {
     )
 
     return (
-        <section ref={parent} className="h-screen w-full relative">
+        <section ref={parent} className="sm:h-screen h-[86vh] w-full relative">
             <div
                 ref={child}
-                className="h-screen w-full absolute top-[30%] grid grid-cols-1 grid-rows-4 overflow-hidden rounded-4xl"
+                className="elemParent sm:h-screen h-[60vh] w-full absolute top-[30%] grid grid-cols-1 grid-rows-4 overflow-hidden rounded-4xl"
             >
                 {['strategy', 'space', 'brand', 'experience'].map((item, i) => (
                     <div
                         key={i}
-                        style={{ backgroundPosition: `0 ${-i * 25}vh` }}
-                        className={`elem relative col-span-1 row-span-1 bg-neutral-900 bg-size-[100vw_100vh] bg-[url('/images/building.jpg')] bg-no-repeat flex ${(i + 1) % 2 === 0 ? 'items-start justify-end' : 'items-end justify-start'}`}
+                        className={`elem relative col-span-1 row-span-1 bg-[url('/images/building.jpg')] bg-no-repeat flex ${(i + 1) % 2 === 0 ? 'items-start justify-end' : 'items-end justify-start'}`}
                     >
                         {i === 0 ? (
                             <h1 className="topHead heading text-2xl md:text-4xl lg:text-6xl text-white uppercase font-bold">{item}</h1>
@@ -125,4 +129,4 @@ const BuildingMain = () => {
     )
 }
 
-export default BuildingMain
+export default App

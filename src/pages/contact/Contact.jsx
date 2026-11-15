@@ -144,100 +144,100 @@ const Contact = () => {
                         ) : (
                             <>
 
-                        <div className="flex items-start justify-between">
-                            <div className="flex items-center gap-2">
-                                <img src="/images/logo.png" alt="" className="h-4 w-4" />
-                                <p className="text-sm">Get in touch</p>
-                            </div>
+                                <div className="flex items-start justify-between max-sm:flex-col max-sm:gap-2">
+                                    <div className="flex items-center gap-2">
+                                        <img src="/images/logo.png" alt="" className="h-4 w-4" />
+                                        <p className="text-sm">Get in touch</p>
+                                    </div>
 
-                            <h2 className="heading leading-none text-lg sm:text-xl lg:text-2xl font-bold">
-                                One brief is all it takes <br className="hidden sm:block" />
-                                to start building <br className="hidden sm:block" />
-                                something layer by <br className="hidden sm:block" />
-                                layer.
-                            </h2>
-                        </div>
+                                    <h2 className="heading leading-none text-lg sm:text-xl lg:text-2xl ">
+                                        One brief is all it takes <br className="hidden sm:block" />
+                                        to start building <br className="hidden sm:block" />
+                                        something layer by <br className="hidden sm:block" />
+                                        layer.
+                                    </h2>
+                                </div>
 
-                        <fieldset className="flex flex-col gap-2">
-                            <legend className="text-sm">
-                                Service<span>(choose any)</span>
-                            </legend>
+                                <fieldset className="flex flex-col gap-2">
+                                    <legend className="text-sm">
+                                        Service<span>(choose any)</span>
+                                    </legend>
 
-                            <div className="flex flex-wrap gap-3">
-                                {services.map((item) => {
-                                    const isSelected = selectedServices.includes(item);
+                                    <div className="flex flex-wrap gap-3">
+                                        {services.map((item) => {
+                                            const isSelected = selectedServices.includes(item);
 
-                                    return (
-                                        <button
-                                            key={item}
-                                            type="button"
-                                            onClick={() => handleService(item)}
-                                            aria-pressed={isSelected}
-                                            className={`px-4 py-2 border border-white cursor-pointer transition-colors duration-300 hover:border-gray-400 ${isSelected
-                                                ? 'bg-black text-white'
-                                                : 'bg-white text-black'
-                                                }`}
-                                        >
-                                            {item}
-                                        </button>
-                                    );
-                                })}
-                            </div>
-                            {errors.services && <p id="services-error" role="alert" className="text-sm text-red-700">{errors.services}</p>}
-                        </fieldset>
+                                            return (
+                                                <button
+                                                    key={item}
+                                                    type="button"
+                                                    onClick={() => handleService(item)}
+                                                    aria-pressed={isSelected}
+                                                    className={`px-4 py-2 border border-white cursor-pointer transition-colors duration-300 hover:border-gray-400 ${isSelected
+                                                        ? 'bg-black text-white'
+                                                        : 'bg-white text-black'
+                                                        }`}
+                                                >
+                                                    {item}
+                                                </button>
+                                            );
+                                        })}
+                                    </div>
+                                    {errors.services && <p id="services-error" role="alert" className="text-sm text-red-700">{errors.services}</p>}
+                                </fieldset>
 
-                        <div className="flex flex-col gap-2">
-                            <p className="text-sm">Timeframe</p>
-                            <div className="flex flex-wrap gap-3">
-                                {duration.map((item, i) => {
-                                    return (
-                                        <button type="button" onClick={() => handleDuration(item)} key={i} className={`px-4 py-2 border border-white cursor-pointer transition-colors duration-300 hover:border-gray-400 ${selectedDuration === item ? 'bg-black text-white' : 'bg-white text-black'}`}>{item}</button>
-                                    )
-                                })}
-                            </div>
-                        </div>
+                                <div className="flex flex-col gap-2">
+                                    <p className="text-sm">Timeframe</p>
+                                    <div className="flex flex-wrap gap-3">
+                                        {duration.map((item, i) => {
+                                            return (
+                                                <button type="button" onClick={() => handleDuration(item)} key={i} className={`px-4 py-2 border border-white cursor-pointer transition-colors duration-300 hover:border-gray-400 ${selectedDuration === item ? 'bg-black text-white' : 'bg-white text-black'}`}>{item}</button>
+                                            )
+                                        })}
+                                    </div>
+                                </div>
 
-                        <div className="flex flex-col gap-2">
-                            <p className="text-sm">Estimated budget</p>
-                            <div className="flex flex-wrap gap-3">
-                                {budget.map((item, i) => {
-                                    return (
-                                        <button type="button" onClick={() => handleBudget(item)} key={i} className={`px-4 py-2 border border-white cursor-pointer transition-colors duration-300 hover:border-gray-400 ${selectedBudget === item ? 'bg-black text-white' : 'bg-white text-black'}`}>{item}</button>
-                                    )
-                                })}
-                            </div>
-                        </div>
+                                <div className="flex flex-col gap-2">
+                                    <p className="text-sm">Estimated budget</p>
+                                    <div className="flex flex-wrap gap-3">
+                                        {budget.map((item, i) => {
+                                            return (
+                                                <button type="button" onClick={() => handleBudget(item)} key={i} className={`px-4 py-2 border border-white cursor-pointer transition-colors duration-300 hover:border-gray-400 ${selectedBudget === item ? 'bg-black text-white' : 'bg-white text-black'}`}>{item}</button>
+                                            )
+                                        })}
+                                    </div>
+                                </div>
 
-                        <div className="flex flex-col gap-2">
-                            <label htmlFor="info" className="text-sm">Project information</label>
-                            <textarea name="info" id="info" required aria-invalid={Boolean(errors.info)} aria-describedby={errors.info ? 'info-error' : undefined} onChange={() => clearFieldError('info')} placeholder="Where it is, What it needs, and what success looks like." className="bg-white w-full min-h-25 outline-none p-2 border border-white focus:border-black placeholder:text-gray-400"></textarea>
-                            {errors.info && <p id="info-error" role="alert" className="text-sm text-red-700">{errors.info}</p>}
-                        </div>
+                                <div className="flex flex-col gap-2">
+                                    <label htmlFor="info" className="text-sm">Project information</label>
+                                    <textarea name="info" id="info" required aria-invalid={Boolean(errors.info)} aria-describedby={errors.info ? 'info-error' : undefined} onChange={() => clearFieldError('info')} placeholder="Where it is, What it needs, and what success looks like." className="bg-white w-full min-h-25 outline-none p-2 border border-white focus:border-black placeholder:text-gray-400"></textarea>
+                                    {errors.info && <p id="info-error" role="alert" className="text-sm text-red-700">{errors.info}</p>}
+                                </div>
 
-                        <div className="flex flex-col gap-3">
-                            <label className="flex flex-col gap-2">
-                                <span className="text-sm">Name</span>
-                                <input type="text" name="name" id="name" required aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? 'name-error' : undefined} onChange={() => clearFieldError('name')} placeholder="Your Name" className="p-2 bg-white border border-white outline-none focus:border-black" />
-                                {errors.name && <span id="name-error" role="alert" className="text-sm text-red-700">{errors.name}</span>}
-                            </label>
-                            <label className="flex flex-col gap-2">
-                                <span className="text-sm">Email</span>
-                                <input type="email" name="email" id="email" required aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? 'email-error' : undefined} onChange={() => clearFieldError('email')} placeholder="Your Email" className="p-2 bg-white border border-white outline-none focus:border-black" />
-                                {errors.email && <span id="email-error" role="alert" className="text-sm text-red-700">{errors.email}</span>}
-                            </label>
-                            <div className="flex flex-col sm:flex-row gap-4 w-full">
-                                <label className="flex flex-col gap-2 w-full">
-                                    <span className="text-sm">Phone <span className="text-xs text-gray-400">(optional)</span></span>
-                                    <input type="tel" name="phone" id="phone" placeholder="+966" className="p-2 bg-white border border-white outline-none focus:border-black" />
-                                </label>
-                                <label className="flex flex-col gap-2 w-full">
-                                    <span className="text-sm">Company <span className="text-xs text-gray-400">(optional)</span></span>
-                                    <input type="text" name="company" id="company" placeholder="Company name" className="p-2 bg-white border border-white outline-none focus:border-black" />
-                                </label>
-                            </div>
-                        </div>
+                                <div className="flex flex-col gap-3">
+                                    <label className="flex flex-col gap-2">
+                                        <span className="text-sm">Name</span>
+                                        <input type="text" name="name" id="name" required aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? 'name-error' : undefined} onChange={() => clearFieldError('name')} placeholder="Your Name" className="p-2 bg-white border border-white outline-none focus:border-black" />
+                                        {errors.name && <span id="name-error" role="alert" className="text-sm text-red-700">{errors.name}</span>}
+                                    </label>
+                                    <label className="flex flex-col gap-2">
+                                        <span className="text-sm">Email</span>
+                                        <input type="email" name="email" id="email" required aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? 'email-error' : undefined} onChange={() => clearFieldError('email')} placeholder="Your Email" className="p-2 bg-white border border-white outline-none focus:border-black" />
+                                        {errors.email && <span id="email-error" role="alert" className="text-sm text-red-700">{errors.email}</span>}
+                                    </label>
+                                    <div className="flex flex-col sm:flex-row gap-4 w-full">
+                                        <label className="flex flex-col gap-2 w-full">
+                                            <span className="text-sm">Phone <span className="text-xs text-gray-400">(optional)</span></span>
+                                            <input type="tel" name="phone" id="phone" placeholder="+966" className="p-2 bg-white border border-white outline-none focus:border-black" />
+                                        </label>
+                                        <label className="flex flex-col gap-2 w-full">
+                                            <span className="text-sm">Company <span className="text-xs text-gray-400">(optional)</span></span>
+                                            <input type="text" name="company" id="company" placeholder="Company name" className="p-2 bg-white border border-white outline-none focus:border-black" />
+                                        </label>
+                                    </div>
+                                </div>
 
-                        <button type="submit" className="flex gap-2 w-full items-center justify-center bg-black text-white py-4 text-xl cursor-pointer group">Send enquiry <span className="group-hover:mb-1 group-hover:ml-1 duration-300"><RiArrowRightUpLine size={18} /></span></button>
+                                <button type="submit" className="flex gap-2 w-full items-center justify-center bg-black text-white py-4 text-xl cursor-pointer group">Send enquiry <span className="group-hover:mb-1 group-hover:ml-1 duration-300"><RiArrowRightUpLine size={18} /></span></button>
                             </>
                         )}
                     </form>

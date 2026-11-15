@@ -27,7 +27,7 @@ const HeroModel = () => {
             con.current
         )
 
-        const totalStages = items.length
+        const totalStages = titles.length
 
         const trigger = ScrollTrigger.create({
             trigger: con.current,
@@ -98,7 +98,7 @@ const HeroModel = () => {
         >
             <div className="h-screen w-full">
                 <Canvas>
-                    <ambientLight intensity={3}/>
+                    <ambientLight intensity={3} />
                     <mesh>
                         <boxGeometry />
                         <meshStandardMaterial wireframe={true} color={'red'} />
