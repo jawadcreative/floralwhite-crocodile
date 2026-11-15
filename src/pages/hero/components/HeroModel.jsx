@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useRef, useState } from "react"
 import { Canvas } from "@react-three/fiber"
 import { OrbitControls } from "@react-three/drei"
+import Interior from "./Interior"
 
 gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger)
 
@@ -96,15 +97,8 @@ const HeroModel = () => {
             ref={con}
             className="relative h-screen w-full overflow-hidden"
         >
-            <div className="h-screen w-full">
-                <Canvas>
-                    <ambientLight intensity={3} />
-                    <mesh>
-                        <boxGeometry />
-                        <meshStandardMaterial wireframe={true} color={'red'} />
-                    </mesh>
-                    <OrbitControls />
-                </Canvas>
+            <div className="h-screen w-full flex justify-center items-center">
+                <Interior />
             </div>
             <div className="w-135 absolute bottom-40 left-20 px-4">
 
