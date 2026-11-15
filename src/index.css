@@ -74,3 +74,38 @@ body {
     grid-column: 1 / -1 !important;
   }
 }
+
+.elem {
+  background-size: 100vw 100vh;
+}
+
+.elem:nth-child(1) {
+  background-position: 0 0;
+}
+.elem:nth-child(2) {
+  background-position: 0 -25vh;
+}
+.elem:nth-child(3) {
+  background-position: 0 -50vh;
+}
+.elem:nth-child(4) {
+  background-position: 0 -75vh;
+}
+
+@media (max-width: 640px) {
+  .elem {
+    background-size: 100vw 60vh;
+  }
+  .elem:nth-child(1) {
+    background-position: 0 0;
+  }
+  .elem:nth-child(2) {
+    background-position: 0 -15vh;
+  }
+  .elem:nth-child(3) {
+    background-position: 0 -30vh;
+  }
+  .elem:nth-child(4) {
+    background-position: 0 -45vh;
+  }
+}

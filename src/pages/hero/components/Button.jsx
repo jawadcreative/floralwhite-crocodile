@@ -30,7 +30,7 @@ const Button = ({ txt }) => {
             to="/about"
             onMouseEnter={() => tl.current.play()}
             onMouseLeave={() => tl.current.reverse()}
-            className="flex gap-0.5 group mt-5 w-fit"
+            className="flex gap-0.5 group w-fit"
         >
             <div className="h-7 flex flex-col overflow-hidden bg-gray-200">
                 <p className="btn-1 text-xs h-7 leading-7 shrink-0 px-4 uppercase">{txt}</p>
