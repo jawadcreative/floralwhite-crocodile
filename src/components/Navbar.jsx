@@ -92,7 +92,6 @@ const Navbar = () => {
                         </div>
                         <div className="flex flex-col gap-2 group-hover:text-gray-400">
                             {['Home',
-                                'Hero',
                                 'About',
                                 'Services',
                                 'Projects',
