@@ -3,16 +3,35 @@ import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { SplitText } from "gsap/SplitText"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useRef, useState } from "react"
-import { Canvas } from "@react-three/fiber"
-import { OrbitControls } from "@react-three/drei"
-import Interior from "./Interior"
+import { lazy, Suspense, useEffect, useRef, useState } from "react"
+
+const Interior = lazy(() => import("./Interior"))
 
 gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger)
 
 const HeroModel = () => {
     const con = useRef(null)
     const [stage, setStage] = useState(0)
+    const [shouldLoadInterior, setShouldLoadInterior] = useState(
+        () => typeof IntersectionObserver === "undefined"
+    )
+
+    useEffect(() => {
+        const section = con.current
+
+        if (!section || shouldLoadInterior) return
+
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                setShouldLoadInterior(true)
+                observer.disconnect()
+            }
+        }, { rootMargin: "200px" })
+
+        observer.observe(section)
+
+        return () => observer.disconnect()
+    }, [shouldLoadInterior])
 
     const items = [
         "strategy",
@@ -98,7 +117,11 @@ const HeroModel = () => {
             className="relative h-screen w-full overflow-hidden"
         >
             <div className="h-screen w-full flex justify-center items-center">
-                <Interior />
+                {shouldLoadInterior && (
+                    <Suspense fallback={null}>
+                        <Interior />
+                    </Suspense>
+                )}
             </div>
             <div className="w-135 absolute bottom-40 left-20 px-4">
 

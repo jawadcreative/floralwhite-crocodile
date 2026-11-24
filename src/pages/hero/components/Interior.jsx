@@ -1,12 +1,12 @@
-import { useMemo, useRef } from 'react'
+import { Suspense, useMemo, useRef } from 'react'
 import { Environment, OrbitControls, Center, useGLTF } from '@react-three/drei'
-import { Canvas } from '@react-three/fiber'
+import { Canvas, useThree } from '@react-three/fiber'
 import gsap from 'gsap'
-import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
+import { MOUSE } from 'three'
 
 gsap.registerPlugin(ScrollTrigger, useGSAP)
-
 
 const Model = () => {
     const { scene } = useGLTF('/model/App_02.glb')
@@ -15,6 +15,8 @@ const Model = () => {
         () => scene.clone(true),
         [scene]
     )
+
+    const { camera } = useThree()
 
     useGSAP(() => {
         const roof = clonedScene.getObjectByName("Box002")
@@ -26,8 +28,9 @@ const Model = () => {
             scrollTrigger: {
                 trigger: ".interior",
                 start: "top top",
-                end: "+=500",
-                scrub: 2,
+                end: "+=400%",
+                scrub: 1,
+                pin: true
             }
         })
 
@@ -35,6 +38,18 @@ const Model = () => {
             y: roof.position.y + 15000,
             ease: "none",
         }, 0)
+
+        tl.to(camera.position, {
+            x: -23.004598940456813,
+            y: 7.649635431857077,
+            z: -2.05604008702973
+        })
+
+        tl.to(camera.position, {
+            x: -15.367878832222013,
+            y: 12.834554941168737,
+            z: 12.834554941168737
+        })
 
     }, { dependencies: [clonedScene] })
 
@@ -45,13 +60,26 @@ const Model = () => {
     )
 }
 
+// const CameraInspector = () => {
+//     const { camera } = useThree()
+//     const controlsref = useRef(null)
+
+//     const logValues = () => {
+//         console.log('C P: ', camera.position.toArray())
+//         console.log('target: ', controlsref.current.target.toArray())
+//     }
+
+//     return (
+
+//   )
+// }
+
 
 const Interior = () => {
-    const controlsRef = useRef()
+    const controlsRef = useRef(null)
 
     return (
         <div className="interior w-full h-screen">
-
             <Canvas
                 camera={{
                     position: [
@@ -69,9 +97,10 @@ const Interior = () => {
                     intensity={2}
                 />
 
-                <Model />
-
-                <Environment preset="city" />
+                <Suspense fallback={null}>
+                    <Model />
+                    <Environment preset="city" />
+                </Suspense>
 
                 <OrbitControls
                     ref={controlsRef}
@@ -83,14 +112,17 @@ const Interior = () => {
                     ]}
                     enableDamping
                     dampingFactor={0.05}
-                    enablePan={false}
+                    enablePan
                     enableZoom={false}
-                    enableRotate={false}
+                    enableRotate
                     screenSpacePanning
+                    mouseButtons={{
+                        LEFT: MOUSE.LEFT,
+                        MIDDLE: MOUSE.MIDDLE,
+                        RIGHT: MOUSE.RIGHT
+                    }}
                 />
-
             </Canvas>
-
         </div>
     )
 }

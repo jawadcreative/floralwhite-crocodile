@@ -28,6 +28,10 @@ body {
   font-family: var(--font-general);
 }
 
+.interior canvas {
+  touch-action: pan-y !important;
+}
+
 .mask {
   padding-left: 20px;
   position: relative;
